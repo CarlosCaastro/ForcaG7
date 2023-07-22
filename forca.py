@@ -34,8 +34,15 @@ def mostrar_palavra_adivinhada(palavra_adivinhada):
     print("Palavra:", " ".join(palavra_adivinhada))
 
 def jogar_novamente():
-    resposta = input("Deseja jogar novamente? (s/n): ")
-    return resposta.lower() == 's'
+    while True:
+        resposta = input("Deseja jogar novamente? (s/n): ").lower()
+        if resposta == 's':
+            return True
+        elif resposta == 'n':
+            return False
+        else:
+            print("Resposta inválida. Digite 's' para jogar novamente ou 'n' para sair.")
+
 
 def jogo_da_forca():
     print("Bem-vindo ao Jogo da Forca do Grupo 07!")
